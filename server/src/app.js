@@ -44,6 +44,10 @@ app.get('/api/health', (req, res) => {
   res.json({ success: true, status: 'healthy', timestamp: new Date() });
 });
 
+// Seed API (Temporary)
+const seedRoutes = require('./routes/seedRoutes');
+app.use('/api/seed', seedRoutes);
+
 // Mount Routes
 app.use('/api/auth', apiLimiter, authRoutes);
 app.use('/api/products', productRoutes);
