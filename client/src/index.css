@@ -1,0 +1,158 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+@theme {
+  --color-gold: #c5a059;
+  --color-gold-light: #e5c180;
+  --color-gold-dark: #a67c37;
+  
+  /* Color mappings for the light cream / burgundy theme */
+  --color-teal-deep: #4a1018;      /* Deep burgundy shadow */
+  --color-teal-dark: #651a25;      /* Secondary Burgundy */
+  --color-maroon: #651a25;         /* Burgundy */
+  --color-maroon-dark: #4a1018;    /* Deep Burgundy */
+  --color-emerald-royal: #651a25;  /* Burgundy */
+  
+  --color-ivory: #fdfbf7;          /* Primary Light Cream Background */
+  --color-charcoal: #2c2c2c;       /* General Body Text */
+  
+  --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+/* Custom Base Elements (Default Light Cream Theme) */
+html, body {
+  background-color: var(--color-ivory);
+  color: var(--color-charcoal);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Headings in Burgundy by default */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-teal-dark);
+}
+
+/* Custom Scrollbar - Gold Thread Accent */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ivory);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-dark);
+}
+
+/* Silk Shimmer & Texture Gradients */
+.silk-sheen {
+  background: linear-gradient(135deg, rgba(253,251,247,0.98) 0%, rgba(101,26,37,0.06) 50%, rgba(253,251,247,0.98) 100%);
+}
+
+/* Cards styled in Burgundy by default, featuring Gold Text overlays */
+.silk-card {
+  background: var(--color-teal-dark);
+  border: 1px solid rgba(197, 160, 89, 0.35);
+  box-shadow: 0 8px 32px 0 rgba(101, 26, 37, 0.08);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.silk-card:hover {
+  border-color: var(--color-gold-light);
+  box-shadow: 0 12px 40px 0 rgba(101, 26, 37, 0.22);
+  transform: translateY(-4px);
+}
+
+.zari-border {
+  border-image: linear-gradient(to right, #c5a059, #a67c37, #fdf3cd, #a67c37, #c5a059) 1;
+}
+
+/* Ensure text elements inside burgundy cards display readable Gold/White */
+.silk-card h1, .silk-card h2, .silk-card h3, .silk-card h4, .silk-card h5, .silk-card h6, 
+.silk-card p, .silk-card span, .silk-card td, .silk-card th, .silk-card li, .silk-card label {
+  color: #fcfaf6 !important;
+}
+
+.silk-card .text-gold {
+  color: var(--color-gold-light) !important;
+}
+
+.silk-card text {
+  fill: #fcfaf6 !important;
+}
+
+/* Micro-animations */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-loading {
+  background: linear-gradient(90deg, #f3ede2 25%, #e6dcc9 50%, #f3ede2 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+/* Ensure inputs remain readable and have proper color schemes */
+input, select, textarea {
+  color: #ffffff !important;
+  background-color: var(--color-teal-deep) !important;
+}
+
+/* Administrative layout tables default contrast */
+table th {
+  color: var(--color-teal-dark) !important;
+}
+
+/* ==================================================== */
+/* Festive Burgundy Theme Overrides (Light-theme class) */
+/* ==================================================== */
+.light-theme {
+  background-color: var(--color-teal-deep);
+  color: #fdfbf7;
+}
+
+.light-theme html, .light-theme body {
+  background-color: var(--color-teal-deep);
+  color: #fdfbf7;
+}
+
+.light-theme h1, .light-theme h2, .light-theme h3, .light-theme h4, .light-theme h5, .light-theme h6 {
+  color: var(--color-gold);
+}
+
+.light-theme p {
+  color: #e5d5c5;
+}
+
+.light-theme .silk-sheen {
+  background: linear-gradient(135deg, rgba(74,16,24,0.98) 0%, rgba(197,160,89,0.15) 50%, rgba(74,16,24,0.98) 100%);
+}
+
+.light-theme .silk-card {
+  background: #360a0f;
+  border-color: rgba(197, 160, 89, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+.light-theme .shimmer-loading {
+  background: linear-gradient(90deg, #30080d 25%, #4a1018 50%, #30080d 75%);
+}
+
+.light-theme ::-webkit-scrollbar-track {
+  background: var(--color-teal-deep);
+}
+
+.light-theme table th {
+  color: var(--color-gold) !important;
+}
